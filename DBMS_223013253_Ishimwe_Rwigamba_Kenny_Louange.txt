@@ -1,0 +1,250 @@
+MariaDB [(none)]> create database ruhande;
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [(none)]> use ruhanda;
+ERROR 1049 (42000): Unknown database 'ruhanda'
+MariaDB [(none)]> use ruhande;
+Database changed
+MariaDB [ruhande]> create table ngoma(Id int primary key, F_name varchar(250), L_name varchar(250), Gender varchar(250), Province varchar(250), District varchar(250), Sector varchar(250), Email_address varchar(250), Phone varchar(12));
+Query OK, 0 rows affected (0.040 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200580023156789, 'MUHIRE', 'Claude', 'M', 'South', 'Nyanza', 'Busasamana', 'muhire@gmail.com', '0788464738');
+Query OK, 1 row affected, 1 warning (0.007 sec)
+
+MariaDB [ruhande]> select*from ngoma;
++------------+--------+--------+--------+----------+----------+------------+------------------+------------+
+| Id         | F_name | L_name | Gender | Province | District | Sector     | Email_address    | Phone      |
++------------+--------+--------+--------+----------+----------+------------+------------------+------------+
+| 2147483647 | MUHIRE | Claude | M      | South    | Nyanza   | Busasamana | muhire@gmail.com | 0788464738 |
++------------+--------+--------+--------+----------+----------+------------+------------------+------------+
+1 row in set (0.001 sec)
+
+MariaDB [ruhande]> drop table ngoma;
+Query OK, 0 rows affected (0.026 sec)
+
+MariaDB [ruhande]> create table ngoma(Id int(16) primary key, F_name varchar(250), L_name varchar(250), Gender varchar(250), Province
+ varchar(250), District varchar(250), Sector varchar(250), Email_address varchar(250), Phone varchar(12));
+Query OK, 0 rows affected (0.028 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200580023156789, 'MUHIRE', 'Claude', 'M', 'South', 'Nyanza', 'Busasamana', 'muhire@gmail.com', '0788464738');
+Query OK, 1 row affected, 1 warning (0.014 sec)
+
+MariaDB [ruhande]> select*from ngoma;
++------------+--------+--------+--------+----------+----------+------------+------------------+------------+
+| Id         | F_name | L_name | Gender | Province | District | Sector     | Email_address    | Phone      |
++------------+--------+--------+--------+----------+----------+------------+------------------+------------+
+| 2147483647 | MUHIRE | Claude | M      | South    | Nyanza   | Busasamana | muhire@gmail.com | 0788464738 |
++------------+--------+--------+--------+----------+----------+------------+------------------+------------+
+1 row in set (0.001 sec)
+
+MariaDB [ruhande]> drop table ngoma;
+Query OK, 0 rows affected (0.024 sec)
+
+MariaDB [ruhande]> create table ngoma(Id varchar(16) primary key, F_name varchar(250), L_name varchar(250), Gender varchar(250), Prov
+ince varchar(250), District varchar(250), Sector varchar(250), Email_address varchar(250), Phone varchar(12));
+Query OK, 0 rows affected (0.048 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200580023156789, 'MUHIRE', 'Claude', 'M', 'South', 'Nyanza', 'Busasamana', 'muhire@gmail.com', '0788464738');
+Query OK, 1 row affected (0.014 sec)
+
+MariaDB [ruhande]> select*from ngoma;
++------------------+--------+--------+--------+----------+----------+------------+------------------+------------+
+| Id               | F_name | L_name | Gender | Province | District | Sector     | Email_address    | Phone      |
++------------------+--------+--------+--------+----------+----------+------------+------------------+------------+
+| 1200580023156789 | MUHIRE | Claude | M      | South    | Nyanza   | Busasamana | muhire@gmail.com | 0788464738 |
++------------------+--------+--------+--------+----------+----------+------------+------------------+------------+
+1 row in set (0.001 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200580023156799, 'RUKUNDO', 'John', 'M', 'South', 'Huye', 'Tumba', 'rukundo@gmail.com',
+'0788464543');
+Query OK, 1 row affected (0.013 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200580023156799, 'KALISA', 'Jacob', 'M', 'Kigali', 'Nyarugenge', 'Nyamirambo', 'kalisa@g
+mail.com', '0798433543');
+ERROR 1062 (23000): Duplicate entry '1200580023156799' for key 'PRIMARY'
+MariaDB [ruhande]> insert into ngoma values(12005800233216799, 'KALISA', 'Jacob', 'M', 'Kigali', 'Nyarugenge', 'Nyamirambo', 'kalisa@
+gmail.com', '0798433543');
+Query OK, 1 row affected, 1 warning (0.012 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200570031216799, 'Muhoza', 'Alice', 'F', 'Kigali', 'Nyarugenge', 'Kacyiru', 'muhoza@gmai
+l.com', '0788422543');
+Query OK, 1 row affected (0.012 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200570031216723, 'Mbaraga', 'Paul', 'M', 'Kigali', 'Gasabo', 'Remera', 'mbaraga@gmail.co
+m', '0788423453');
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [ruhande]> select*from ngoma;
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+| Id               | F_name  | L_name | Gender | Province | District   | Sector     | Email_address     | Phone      |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+| 1200570031216723 | Mbaraga | Paul   | M      | Kigali   | Gasabo     | Remera     | mbaraga@gmail.com | 0788423453 |
+| 1200570031216799 | Muhoza  | Alice  | F      | Kigali   | Nyarugenge | Kacyiru    | muhoza@gmail.com  | 0788422543 |
+| 1200580023156789 | MUHIRE  | Claude | M      | South    | Nyanza     | Busasamana | muhire@gmail.com  | 0788464738 |
+| 1200580023156799 | RUKUNDO | John   | M      | South    | Huye       | Tumba      | rukundo@gmail.com | 0788464543 |
+| 1200580023321679 | KALISA  | Jacob  | M      | Kigali   | Nyarugenge | Nyamirambo | kalisa@gmail.com  | 0798433543 |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+5 rows in set (0.001 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200570035213723, 'UWASE', 'Alexia', 'F', 'West', 'Rubavu', 'Gisenyi', 'uwase@gmail.com',
+ '0789443452');
+Query OK, 1 row affected (0.006 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200570035213723, 'MWIZA', 'Megan', 'F', 'East', 'Rwamagana', 'Gashora', 'mwiza@gmail.com
+', '0799453859');
+ERROR 1062 (23000): Duplicate entry '1200570035213723' for key 'PRIMARY'
+MariaDB [ruhande]> insert into ngoma values(1200770035213723, 'MWIZA', 'Megan', 'F', 'East', 'Rwamagana', 'Gashora', 'mwiza@gmail.com
+', '0799453859');
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200770034235723, 'KARABO', 'Peace', 'F', 'North', 'Gicumbi', 'Tumba', 'karabo@gmail.com'
+, '0798553559');
+Query OK, 1 row affected (0.013 sec)
+
+MariaDB [ruhande]> insert into ngoma values(12005800343516799, 'ISHIMWE', 'Peter', 'M', 'Kigali', 'Kicukiro', 'Nyakamanda', 'ishimwe@
+gmail.com', '0795493543');
+Query OK, 1 row affected, 1 warning (0.011 sec)
+
+MariaDB [ruhande]> insert into ngoma values(1200580034251444, 'Mbabazi', 'Eric', 'M', 'South', 'Huye', 'Tumba', 'eric@gmail.com', '07
+95434554');
+Query OK, 1 row affected (0.013 sec)
+
+MariaDB [ruhande]> select*from ngoma;
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+| Id               | F_name  | L_name | Gender | Province | District   | Sector     | Email_address     | Phone      |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+| 1200570031216723 | Mbaraga | Paul   | M      | Kigali   | Gasabo     | Remera     | mbaraga@gmail.com | 0788423453 |
+| 1200570031216799 | Muhoza  | Alice  | F      | Kigali   | Nyarugenge | Kacyiru    | muhoza@gmail.com  | 0788422543 |
+| 1200570035213723 | UWASE   | Alexia | F      | West     | Rubavu     | Gisenyi    | uwase@gmail.com   | 0789443452 |
+| 1200580023156789 | MUHIRE  | Claude | M      | South    | Nyanza     | Busasamana | muhire@gmail.com  | 0788464738 |
+| 1200580023156799 | RUKUNDO | John   | M      | South    | Huye       | Tumba      | rukundo@gmail.com | 0788464543 |
+| 1200580023321679 | KALISA  | Jacob  | M      | Kigali   | Nyarugenge | Nyamirambo | kalisa@gmail.com  | 0798433543 |
+| 1200580034251444 | Mbabazi | Eric   | M      | South    | Huye       | Tumba      | eric@gmail.com    | 0795434554 |
+| 1200580034351679 | ISHIMWE | Peter  | M      | Kigali   | Kicukiro   | Nyakamanda | ishimwe@gmail.com | 0795493543 |
+| 1200770034235723 | KARABO  | Peace  | F      | North    | Gicumbi    | Tumba      | karabo@gmail.com  | 0798553559 |
+| 1200770035213723 | MWIZA   | Megan  | F      | East     | Rwamagana  | Gashora    | mwiza@gmail.com   | 0799453859 |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+10 rows in set (0.001 sec)
+
+MariaDB [ruhande]> alter table ngoma add age int;
+Query OK, 0 rows affected (0.012 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [ruhande]> select*from ngoma;
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+------+
+| Id               | F_name  | L_name | Gender | Province | District   | Sector     | Email_address     | Phone      | age  |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+------+
+| 1200570031216723 | Mbaraga | Paul   | M      | Kigali   | Gasabo     | Remera     | mbaraga@gmail.com | 0788423453 | NULL |
+| 1200570031216799 | Muhoza  | Alice  | F      | Kigali   | Nyarugenge | Kacyiru    | muhoza@gmail.com  | 0788422543 | NULL |
+| 1200570035213723 | UWASE   | Alexia | F      | West     | Rubavu     | Gisenyi    | uwase@gmail.com   | 0789443452 | NULL |
+| 1200580023156789 | MUHIRE  | Claude | M      | South    | Nyanza     | Busasamana | muhire@gmail.com  | 0788464738 | NULL |
+| 1200580023156799 | RUKUNDO | John   | M      | South    | Huye       | Tumba      | rukundo@gmail.com | 0788464543 | NULL |
+| 1200580023321679 | KALISA  | Jacob  | M      | Kigali   | Nyarugenge | Nyamirambo | kalisa@gmail.com  | 0798433543 | NULL |
+| 1200580034251444 | Mbabazi | Eric   | M      | South    | Huye       | Tumba      | eric@gmail.com    | 0795434554 | NULL |
+| 1200580034351679 | ISHIMWE | Peter  | M      | Kigali   | Kicukiro   | Nyakamanda | ishimwe@gmail.com | 0795493543 | NULL |
+| 1200770034235723 | KARABO  | Peace  | F      | North    | Gicumbi    | Tumba      | karabo@gmail.com  | 0798553559 | NULL |
+| 1200770035213723 | MWIZA   | Megan  | F      | East     | Rwamagana  | Gashora    | mwiza@gmail.com   | 0799453859 | NULL |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+------+
+10 rows in set (0.001 sec)
+
+MariaDB [ruhande]> update ngoma set age = 19 where F_name = 'Mbaraga';
+Query OK, 1 row affected (0.012 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [ruhande]> select*from ngoma;
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+------+
+| Id               | F_name  | L_name | Gender | Province | District   | Sector     | Email_address     | Phone      | age  |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+------+
+| 1200570031216723 | Mbaraga | Paul   | M      | Kigali   | Gasabo     | Remera     | mbaraga@gmail.com | 0788423453 |   19 |
+| 1200570031216799 | Muhoza  | Alice  | F      | Kigali   | Nyarugenge | Kacyiru    | muhoza@gmail.com  | 0788422543 | NULL |
+| 1200570035213723 | UWASE   | Alexia | F      | West     | Rubavu     | Gisenyi    | uwase@gmail.com   | 0789443452 | NULL |
+| 1200580023156789 | MUHIRE  | Claude | M      | South    | Nyanza     | Busasamana | muhire@gmail.com  | 0788464738 | NULL |
+| 1200580023156799 | RUKUNDO | John   | M      | South    | Huye       | Tumba      | rukundo@gmail.com | 0788464543 | NULL |
+| 1200580023321679 | KALISA  | Jacob  | M      | Kigali   | Nyarugenge | Nyamirambo | kalisa@gmail.com  | 0798433543 | NULL |
+| 1200580034251444 | Mbabazi | Eric   | M      | South    | Huye       | Tumba      | eric@gmail.com    | 0795434554 | NULL |
+| 1200580034351679 | ISHIMWE | Peter  | M      | Kigali   | Kicukiro   | Nyakamanda | ishimwe@gmail.com | 0795493543 | NULL |
+| 1200770034235723 | KARABO  | Peace  | F      | North    | Gicumbi    | Tumba      | karabo@gmail.com  | 0798553559 | NULL |
+| 1200770035213723 | MWIZA   | Megan  | F      | East     | Rwamagana  | Gashora    | mwiza@gmail.com   | 0799453859 | NULL |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+------+
+10 rows in set (0.001 sec)
+
+MariaDB [ruhande]> alter table ngoma drop age;
+Query OK, 0 rows affected (0.023 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [ruhande]> select*from ngoma;
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+| Id               | F_name  | L_name | Gender | Province | District   | Sector     | Email_address     | Phone      |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+| 1200570031216723 | Mbaraga | Paul   | M      | Kigali   | Gasabo     | Remera     | mbaraga@gmail.com | 0788423453 |
+| 1200570031216799 | Muhoza  | Alice  | F      | Kigali   | Nyarugenge | Kacyiru    | muhoza@gmail.com  | 0788422543 |
+| 1200570035213723 | UWASE   | Alexia | F      | West     | Rubavu     | Gisenyi    | uwase@gmail.com   | 0789443452 |
+| 1200580023156789 | MUHIRE  | Claude | M      | South    | Nyanza     | Busasamana | muhire@gmail.com  | 0788464738 |
+| 1200580023156799 | RUKUNDO | John   | M      | South    | Huye       | Tumba      | rukundo@gmail.com | 0788464543 |
+| 1200580023321679 | KALISA  | Jacob  | M      | Kigali   | Nyarugenge | Nyamirambo | kalisa@gmail.com  | 0798433543 |
+| 1200580034251444 | Mbabazi | Eric   | M      | South    | Huye       | Tumba      | eric@gmail.com    | 0795434554 |
+| 1200580034351679 | ISHIMWE | Peter  | M      | Kigali   | Kicukiro   | Nyakamanda | ishimwe@gmail.com | 0795493543 |
+| 1200770034235723 | KARABO  | Peace  | F      | North    | Gicumbi    | Tumba      | karabo@gmail.com  | 0798553559 |
+| 1200770035213723 | MWIZA   | Megan  | F      | East     | Rwamagana  | Gashora    | mwiza@gmail.com   | 0799453859 |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+10 rows in set (0.001 sec)
+
+MariaDB [ruhande]> select* from ngoma where province = 'Kigali' and Gender ='M';
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+| Id               | F_name  | L_name | Gender | Province | District   | Sector     | Email_address     | Phone      |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+| 1200570031216723 | Mbaraga | Paul   | M      | Kigali   | Gasabo     | Remera     | mbaraga@gmail.com | 0788423453 |
+| 1200580023321679 | KALISA  | Jacob  | M      | Kigali   | Nyarugenge | Nyamirambo | kalisa@gmail.com  | 0798433543 |
+| 1200580034351679 | ISHIMWE | Peter  | M      | Kigali   | Kicukiro   | Nyakamanda | ishimwe@gmail.com | 0795493543 |
++------------------+---------+--------+--------+----------+------------+------------+-------------------+------------+
+3 rows in set (0.001 sec)
+
+MariaDB [ruhande]> select F_name, L_name, Phone from ngoma where province = 'Kigali' and Gender ='M';
++---------+--------+------------+
+| F_name  | L_name | Phone      |
++---------+--------+------------+
+| Mbaraga | Paul   | 0788423453 |
+| KALISA  | Jacob  | 0798433543 |
+| ISHIMWE | Peter  | 0795493543 |
++---------+--------+------------+
+3 rows in set (0.001 sec)
+
+MariaDB [ruhande]> select * from ngoma where District = 'Huye' or District ='Nyanza';
++------------------+---------+--------+--------+----------+----------+------------+-------------------+------------+
+| Id               | F_name  | L_name | Gender | Province | District | Sector     | Email_address     | Phone      |
++------------------+---------+--------+--------+----------+----------+------------+-------------------+------------+
+| 1200580023156789 | MUHIRE  | Claude | M      | South    | Nyanza   | Busasamana | muhire@gmail.com  | 0788464738 |
+| 1200580023156799 | RUKUNDO | John   | M      | South    | Huye     | Tumba      | rukundo@gmail.com | 0788464543 |
+| 1200580034251444 | Mbabazi | Eric   | M      | South    | Huye     | Tumba      | eric@gmail.com    | 0795434554 |
++------------------+---------+--------+--------+----------+----------+------------+-------------------+------------+
+3 rows in set (0.001 sec)
+
+MariaDB [ruhande]> update ngoma set Lname = 'Patrick' where F_name= 'RUKUNDO';
+ERROR 1054 (42S22): Unknown column 'Lname' in 'field list'
+MariaDB [ruhande]> update ngoma set L_name = 'Patrick' where F_name= 'RUKUNDO';
+Query OK, 1 row affected (0.014 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [ruhande]> select * from ngoma;
++------------------+---------+---------+--------+----------+------------+------------+-------------------+------------+
+| Id               | F_name  | L_name  | Gender | Province | District   | Sector     | Email_address     | Phone      |
++------------------+---------+---------+--------+----------+------------+------------+-------------------+------------+
+| 1200570031216723 | Mbaraga | Paul    | M      | Kigali   | Gasabo     | Remera     | mbaraga@gmail.com | 0788423453 |
+| 1200570031216799 | Muhoza  | Alice   | F      | Kigali   | Nyarugenge | Kacyiru    | muhoza@gmail.com  | 0788422543 |
+| 1200570035213723 | UWASE   | Alexia  | F      | West     | Rubavu     | Gisenyi    | uwase@gmail.com   | 0789443452 |
+| 1200580023156789 | MUHIRE  | Claude  | M      | South    | Nyanza     | Busasamana | muhire@gmail.com  | 0788464738 |
+| 1200580023156799 | RUKUNDO | Patrick | M      | South    | Huye       | Tumba      | rukundo@gmail.com | 0788464543 |
+| 1200580023321679 | KALISA  | Jacob   | M      | Kigali   | Nyarugenge | Nyamirambo | kalisa@gmail.com  | 0798433543 |
+| 1200580034251444 | Mbabazi | Eric    | M      | South    | Huye       | Tumba      | eric@gmail.com    | 0795434554 |
+| 1200580034351679 | ISHIMWE | Peter   | M      | Kigali   | Kicukiro   | Nyakamanda | ishimwe@gmail.com | 0795493543 |
+| 1200770034235723 | KARABO  | Peace   | F      | North    | Gicumbi    | Tumba      | karabo@gmail.com  | 0798553559 |
+| 1200770035213723 | MWIZA   | Megan   | F      | East     | Rwamagana  | Gashora    | mwiza@gmail.com   | 0799453859 |
++------------------+---------+---------+--------+----------+------------+------------+-------------------+------------+
+10 rows in set (0.001 sec)
+
+
+
+
+
+
+
